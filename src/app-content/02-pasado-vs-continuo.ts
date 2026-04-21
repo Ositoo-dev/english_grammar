@@ -102,9 +102,6 @@ export const pasadoVsContinuo: GrammarSection = {
       title: "Truco para Recordar",
       content: "Imagina una película. El `Pasado Continuo` es la escena larga que se desarrolla lentamente (alguien camina bajo la lluvia). El `Pasado Simple` es el susto repentino (¡un trueno!). `While` (mientras) describe la escena, `when` (cuando) introduce el susto.",
     },
-    {
-      type: "ai-generator",
-    }
   ],
   quiz: [
     {

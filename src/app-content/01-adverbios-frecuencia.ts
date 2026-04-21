@@ -105,9 +105,6 @@ export const adverbiosDeFrecuencia: GrammarSection = {
       title: "Truco para Recordar",
       content: "Piensa en el verbo `to be` como un rey: es tan importante que el adverbio le cede el paso y va `después`. Con los demás verbos (los 'comunes'), el adverbio toma la delantera y va `antes`.",
     },
-    {
-      type: "ai-generator",
-    }
   ],
   quiz: [
     {

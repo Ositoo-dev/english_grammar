@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import type { ContentBlock, VerbTable } from "@/app-content/types";
-import { AiExampleGenerator } from "./ai-example-generator";
 import { Award, CalendarDays, Check, Star, X, Zap } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Switch } from "./ui/switch";
@@ -264,9 +263,6 @@ export function ContentRenderer({ block }: { block: ContentBlock }) {
            </div>
         </div>
       )
-
-    case "ai-generator":
-        return <AiExampleGenerator />
 
     default:
       return null;

@@ -59,7 +59,6 @@ export type ContentBlock =
       incorrect: { sentence: string; explanation?: string };
     }
   | { type: "timeline"; longAction: string; shortAction: string; }
-  | { type: "ai-generator" }
   | FrequencyList
   | Mnemonic
   | CommonMistakes

@@ -97,9 +97,6 @@ export const presentePerfecto: GrammarSection = {
       title: "Truco para Recordar",
       content: "Piensa en el Presente Perfecto como tu 'álbum de fotos de vida'. Cada foto es una experiencia (`he viajado`, `he comido`), pero no tienes la fecha exacta escrita. El Pasado Simple es como una página de diario: `15 de Mayo, 2022: Fui al cine.`",
     },
-    {
-      type: "ai-generator",
-    }
   ],
   quiz: [
     {

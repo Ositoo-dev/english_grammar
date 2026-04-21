@@ -107,9 +107,6 @@ export const reportedSpeech: GrammarSection = {
       title: "Truco para Recordar",
       content: "Piensa en el 'Backshift' como contar un chisme viejo. Como ocurrió en el pasado, todo lo que cuentas sobre ello también debe sonar más `pasado`. El presente se vuelve pasado, el pasado se vuelve 'súper pasado' (pasado perfecto).",
     },
-    {
-      type: "ai-generator",
-    }
   ],
   quiz: [
     {
