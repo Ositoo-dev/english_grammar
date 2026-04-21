@@ -1,0 +1,141 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Professional & Natural Light Theme */
+    --bg-base:      #F9F9F7;   /* A very light, warm gray - like canvas */
+    --bg-surface:   #FFFFFF;   /* Pure white for cards to pop slightly */
+    --bg-elevated:  #F0F0EE;   /* A slightly darker gray for hovers/inputs */
+
+    --text-primary:   #000000;   /* Black for maximum contrast */
+    --text-secondary: #333333;   /* Dark gray for secondary text */
+    --text-hint:      #666666;   /* Medium-dark gray for hints */
+
+    --accent:         #16a34a;   /* Saturated green */
+    --accent-hover:   #15803d;
+    --accent-dim:     #dcfce7;   /* Saturated light green */
+    --accent-glow:    #16a34a40;
+
+    --accent-2:       #4a6a8a;   /* Slate blue */
+    --accent-2-dim:   #eef2f6;   /* Very light blue-gray tint */
+    --accent-2-text:  #2c4053;   /* Dark slate blue for text */
+
+    --green:        #16a34a;
+    --green-dim:    #dcfce7;
+    --green-text:   #15803d;   /* Darker green for text on the light tint */
+
+    --red:          #dc2626;
+    --red-dim:      #fee2e2;
+    --red-text:     #b91c1c;
+
+    --amber:        #d97706;
+    --amber-dim:    #fef3c7;
+    --amber-text:   #b45309;
+
+    --border:         #e5e5e3;
+    --border-bright:  #d1d1cf;
+
+    --primary:      var(--accent);
+    --primary-foreground: #FFF;
+    --secondary:    var(--bg-elevated);
+    --secondary-foreground: var(--text-secondary);
+  }
+
+  .dark {
+    /* Muted, Professional Dark Theme */
+    --bg-base:      #19191c;
+    --bg-surface:   #212126;
+    --bg-elevated:  #2c2c33;
+    
+    --text-primary:   #f0f0f2;
+    --text-secondary: #9e9ea6;
+    --text-hint:      #8a8a90;
+    
+    --accent:         #00a86b;
+    --accent-hover:   #00c27a;
+    --accent-dim:     #00291a;
+    --accent-glow:    #00a86b40;
+
+    --accent-2:       #6a9fde;
+    --accent-2-dim:   #1e2c40;
+    --accent-2-text:  #a8c5e8;
+
+    --green:        #00a86b;
+    --green-dim:    #00291a;
+    --green-text:   #80ffc8;
+
+    --red:          #ff6b6b;
+    --red-dim:      #4d1a1a;
+    --red-text:     #ffb3b3;
+    
+    --amber:        #ffb84d;
+    --amber-dim:    #4d3300;
+    --amber-text:   #ffd480;
+
+    --border:         #383840;
+    --border-bright:  #525259;
+
+    --primary:      var(--accent);
+    --primary-foreground: #FFF;
+    --secondary:    var(--bg-elevated);
+    --secondary-foreground: var(--text-secondary);
+  }
+
+  * {
+    @apply border-[var(--border)];
+  }
+
+  body {
+    @apply bg-[var(--bg-base)] text-[var(--text-primary)] font-body antialiased;
+    min-height: 100vh;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  section:target {
+    scroll-margin-top: 80px;
+  }
+}
+
+@layer components {
+  .highlight {
+    text-decoration-line: underline;
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+
+  .lightbulb {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    background-color: var(--amber);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  }
+  .lightbulb::before {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 8px;
+    background-color: var(--amber);
+    border-radius: 0 0 4px 4px;
+  }
+  .lightbulb::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 2px;
+    background-color: var(--text-secondary);
+  }
+}
