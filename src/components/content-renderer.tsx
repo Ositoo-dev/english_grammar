@@ -39,14 +39,14 @@ const VerbTableComponent: React.FC<{ block: VerbTable }> = ({ block }) => {
       <div className="flex flex-col items-start gap-4 rounded-lg bg-surface p-4 sm:flex-row sm:items-center sm:justify-between">
         <h4 className="font-medium text-text-primary">{block.title}</h4>
         <div className="flex shrink-0 items-center space-x-2">
-          <Label htmlFor="verb-type-switch" className={cn("font-medium", !showIrregular && "text-text-secondary")}>Regulares</Label>
+          <Label htmlFor="verb-type-switch" className={cn("font-medium", showIrregular && "text-text-secondary")}>Regulares</Label>
           <Switch 
             id="verb-type-switch" 
             checked={showIrregular}
             onCheckedChange={setShowIrregular}
             aria-label="Cambiar entre verbos regulares e irregulares"
           />
-          <Label htmlFor="verb-type-switch" className={cn("font-medium", showIrregular && "text-text-secondary")}>Irregulares</Label>
+          <Label htmlFor="verb-type-switch" className={cn("font-medium", !showIrregular && "text-text-secondary")}>Irregulares</Label>
         </div>
       </div>
       <div className="w-full overflow-x-auto rounded-lg border border-border">
