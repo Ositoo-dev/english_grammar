@@ -2,7 +2,7 @@ import type {NextConfig} from 'next';
 
 // This is the name of your GitHub repository.
 // IMPORTANT: If your repository has a different name, you must change this value.
-const repoName = 'nextn';
+const repoName = 'english_grammar';
 
 const isGithubActions = process.env.GITHUB_ACTIONS === 'true';
 
