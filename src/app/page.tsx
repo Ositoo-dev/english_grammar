@@ -70,8 +70,8 @@ export default function Home() {
         progress={progress}
         resetProgress={resetProgress}
       />
-      <main className="mx-auto max-w-[860px] px-6 py-8 pt-28">
-        <div className="space-y-24">
+      <main className="mx-auto max-w-[860px] px-4 py-8 pt-20 sm:px-6">
+        <div className="space-y-16 sm:space-y-24">
           {grammarSections.map((section, index) => (
             <React.Fragment key={section.id}>
               <GrammarSection

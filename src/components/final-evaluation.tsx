@@ -252,13 +252,13 @@ const OrderSentenceComponent = ({
 
   return (
     <div>
-      <p className="text-lg font-semibold text-text-primary">
+      <p className="text-base font-semibold text-text-primary sm:text-lg">
         {question.prompt}
       </p>
       <div className="mt-4 min-h-[6rem] rounded-lg border-2 border-dashed border-border p-3">
         {answer.length > 0 ? (
           answer.map((word, i) => (
-            <span key={i} className="inline-block p-1 font-code text-lg">
+            <span key={i} className="inline-block p-1 font-code text-base sm:text-lg">
               {word}
             </span>
           ))
@@ -276,7 +276,7 @@ const OrderSentenceComponent = ({
           <Button
             key={i}
             variant="outline"
-            className={cn('text-base')}
+            className={cn('text-sm sm:text-base')}
             onClick={() => handleWordClick(word)}
           >
             {word}
@@ -297,7 +297,7 @@ const MultipleChoiceComponent = ({
   onAnswer: (answer: number) => void;
 }) => (
   <div>
-    <p className="text-lg font-semibold text-text-primary">
+    <p className="text-base font-semibold text-text-primary sm:text-lg">
       {question.type === 'identify-error' ? (
         <HighlightedText text={question.sentence} />
       ) : (
@@ -310,7 +310,7 @@ const MultipleChoiceComponent = ({
           key={index}
           onClick={() => onAnswer(index)}
           className={cn(
-            'flex w-full items-start gap-3 rounded-lg border p-4 text-left text-base transition-all',
+            'flex w-full items-start gap-3 rounded-lg border p-4 text-left text-sm transition-all sm:text-base',
             answer === index
               ? 'border-accent bg-accent-glow ring-2 ring-accent'
               : 'border-border bg-bg-base hover:bg-bg-elevated'
@@ -352,7 +352,7 @@ const MatchingComponent = ({
   
   return (
     <div>
-      <p className="text-lg font-semibold text-text-primary">{question.prompt}</p>
+      <p className="text-base font-semibold text-text-primary sm:text-lg">{question.prompt}</p>
       <div className="mt-6 space-y-4">
         {question.pairs.map((pair) => (
           <div key={pair.id} className="grid items-center gap-4 md:grid-cols-2">
@@ -392,7 +392,7 @@ const IntroScreen = ({
   onStart: () => void;
 }) => (
   <div className="rounded-2xl border-2 border-dashed border-border bg-surface p-8 text-center">
-    <h1 className="font-headline text-4xl font-bold text-accent">
+    <h1 className="font-headline text-3xl font-bold text-accent sm:text-4xl">
       {evaluation.title}
     </h1>
     <p className="mt-2 text-lg text-text-secondary">{evaluation.subtitle}</p>
@@ -425,7 +425,7 @@ const ResultsScreen = ({ evaluation, answers, score, feedback, onRetake }: any) 
         <div className="space-y-8">
              <div className="rounded-2xl border-2 border-accent bg-accent-dim p-8 text-center">
                 <h1 className="font-headline text-2xl font-bold text-text-primary">Resultados de la Evaluación</h1>
-                <p className="mt-4 text-6xl font-bold text-accent">{score}<span className="text-3xl text-text-secondary">/{evaluation.totalPoints}</span></p>
+                <p className="mt-4 text-5xl font-bold text-accent sm:text-6xl">{score}<span className="text-3xl text-text-secondary">/{evaluation.totalPoints}</span></p>
                 {feedback && (
                     <>
                         <p className="mt-2 text-2xl font-semibold text-accent">{feedback.title}</p>

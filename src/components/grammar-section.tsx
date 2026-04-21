@@ -58,14 +58,14 @@ export const GrammarSection = React.forwardRef<
   ) => {
     return (
       <section id={section.id} ref={ref} className="relative scroll-mt-24">
-        <div className="flex items-start gap-4">
-          <span className="font-headline text-7xl font-bold leading-none text-text-hint -mt-1">{section.badge}</span>
+        <div className="flex items-start gap-2 sm:gap-4">
+          <span className="font-headline text-6xl font-bold leading-none text-text-hint -mt-1 sm:text-7xl">{section.badge}</span>
           <div className="w-full">
             <p className="font-body text-xs font-medium uppercase tracking-[0.12em] text-text-secondary">{section.tag}</p>
-            <h2 className="font-headline text-5xl font-black italic text-accent">{section.title}</h2>
+            <h2 className="font-headline text-4xl font-black italic text-accent sm:text-5xl">{section.title}</h2>
           </div>
         </div>
-        <p className="mt-4 max-w-2xl text-lg text-text-secondary">{section.description}</p>
+        <p className="mt-4 max-w-2xl text-base text-text-secondary sm:text-lg">{section.description}</p>
         <hr className="my-12 border-t border-border" />
         
         <div className="space-y-12">

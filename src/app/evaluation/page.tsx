@@ -33,8 +33,8 @@ export default function EvaluationPage() {
         {progress === 100 ? (
           <FinalEvaluation evaluation={finalEvaluation} />
         ) : (
-          <div className="flex flex-col items-center justify-center rounded-xl border border-border bg-surface p-12 text-center">
-            <h1 className="font-headline text-3xl font-bold">
+          <div className="flex flex-col items-center justify-center rounded-xl border border-border bg-surface p-6 text-center sm:p-12">
+            <h1 className="font-headline text-2xl font-bold sm:text-3xl">
               Evaluación Bloqueada
             </h1>
             <p className="mt-2 text-text-secondary">
