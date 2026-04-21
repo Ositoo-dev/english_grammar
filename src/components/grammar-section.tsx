@@ -19,17 +19,17 @@ interface GrammarSectionProps {
 const RuleCard: React.FC<{ rule: GrammarSectionType['rule'] }> = ({ rule }) => {
   if (!rule) return null;
   return (
-    <div className="relative overflow-hidden rounded-xl border-l-4 border-accent bg-accent-dim p-6">
+    <div className="relative overflow-hidden rounded-xl border-l-4 border-accent bg-accent-dim p-4 sm:p-6">
       <Star className="absolute -right-4 -top-4 h-32 w-32 text-accent-glow" strokeWidth={0.5} fill="currentColor" />
       <div className="relative z-10">
         <h3 className="font-body text-xs font-medium uppercase tracking-[0.12em] text-accent">{rule.name}</h3>
         <p className="mt-2 text-text-secondary">{rule.explanation}</p>
-        <div className="mt-4 space-y-2">
+        <div className="mt-4 space-y-4">
           {rule.formulas.map((formula, i) => (
-            <div key={i} className="flex items-center gap-2">
+            <div key={i} className="flex flex-wrap items-center gap-2">
               {formula.split("→").map((part, j) => (
                 <React.Fragment key={j}>
-                  <span className="rounded-md border border-border-bright bg-text-primary px-2 py-1 font-code text-sm text-background">{part.trim()}</span>
+                  <span className="whitespace-nowrap rounded-md border border-border-bright bg-text-primary px-2 py-1 font-code text-sm text-background">{part.trim()}</span>
                   {j < formula.split("→").length - 1 && <span className="text-text-hint">→</span>}
                 </React.Fragment>
               ))}
@@ -59,23 +59,23 @@ export const GrammarSection = React.forwardRef<
     return (
       <section id={section.id} ref={ref} className="relative scroll-mt-24">
         <div className="flex items-start gap-2 sm:gap-4">
-          <span className="font-headline text-6xl font-bold leading-none text-text-hint -mt-1 sm:text-7xl">{section.badge}</span>
+          <span className="font-headline text-5xl font-bold leading-none text-text-hint -mt-1 sm:text-7xl">{section.badge}</span>
           <div className="w-full">
             <p className="font-body text-xs font-medium uppercase tracking-[0.12em] text-text-secondary">{section.tag}</p>
-            <h2 className="font-headline text-4xl font-black italic text-accent sm:text-5xl">{section.title}</h2>
+            <h2 className="font-headline text-3xl font-black italic text-accent sm:text-5xl">{section.title}</h2>
           </div>
         </div>
-        <p className="mt-4 max-w-2xl text-base text-text-secondary sm:text-lg">{section.description}</p>
-        <hr className="my-12 border-t border-border" />
+        <p className="mt-4 max-w-2xl text-base text-text-secondary">{section.description}</p>
+        <hr className="my-8 sm:my-12 border-t border-border" />
         
-        <div className="space-y-12">
+        <div className="space-y-8 sm:space-y-12">
             {section.rule && <RuleCard rule={section.rule} />}
             {section.content.map((block, index) => (
               <ContentRenderer key={index} block={block} />
             ))}
         </div>
 
-        <div className="mt-16">
+        <div className="mt-12 sm:mt-16">
             <Quiz
               sectionId={section.id}
               questions={section.quiz}
@@ -85,7 +85,7 @@ export const GrammarSection = React.forwardRef<
             />
         </div>
 
-        <div className="mt-12 flex justify-center">
+        <div className="mt-8 sm:mt-12 flex justify-center">
             <button
             onClick={onToggleStatus}
             className={cn(

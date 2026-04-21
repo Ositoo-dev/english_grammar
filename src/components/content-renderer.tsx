@@ -36,9 +36,9 @@ const VerbTableComponent: React.FC<{ block: VerbTable }> = ({ block }) => {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between rounded-lg bg-surface p-4">
+      <div className="flex flex-col items-start gap-4 rounded-lg bg-surface p-4 sm:flex-row sm:items-center sm:justify-between">
         <h4 className="font-medium text-text-primary">{block.title}</h4>
-        <div className="flex items-center space-x-2">
+        <div className="flex shrink-0 items-center space-x-2">
           <Label htmlFor="verb-type-switch" className={cn("font-medium", !showIrregular && "text-text-secondary")}>Regulares</Label>
           <Switch 
             id="verb-type-switch" 
@@ -49,23 +49,23 @@ const VerbTableComponent: React.FC<{ block: VerbTable }> = ({ block }) => {
           <Label htmlFor="verb-type-switch" className={cn("font-medium", showIrregular && "text-text-secondary")}>Irregulares</Label>
         </div>
       </div>
-      <div className="overflow-hidden rounded-lg border border-border">
+      <div className="w-full overflow-x-auto rounded-lg border border-border">
         <table className="min-w-full">
           <thead className="bg-bg-elevated">
             <tr>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-accent">Infinitive</th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-accent">Simple Past</th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-accent">Past Participle</th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-accent">Spanish</th>
+              <th scope="col" className="whitespace-nowrap px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-accent sm:px-6">Infinitive</th>
+              <th scope="col" className="whitespace-nowrap px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-accent sm:px-6">Simple Past</th>
+              <th scope="col" className="whitespace-nowrap px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-accent sm:px-6">Past Participle</th>
+              <th scope="col" className="whitespace-nowrap px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-accent sm:px-6">Spanish</th>
             </tr>
           </thead>
           <tbody>
             {verbsToShow.map((verb, rowIndex) => (
               <tr key={verb.infinitive} className={cn("hover:bg-accent-glow", rowIndex % 2 === 0 ? 'bg-bg-base' : 'bg-surface')}>
-                <td className="px-6 py-4 text-sm font-medium text-text-primary">{verb.infinitive}</td>
-                <td className="px-6 py-4 text-sm text-text-secondary font-code">{verb.simplePast}</td>
-                <td className="px-6 py-4 text-sm text-text-secondary font-code">{verb.pastParticiple}</td>
-                <td className="px-6 py-4 text-sm text-text-secondary italic">{verb.spanish}</td>
+                <td className="whitespace-nowrap px-4 py-4 text-sm font-medium text-text-primary sm:px-6">{verb.infinitive}</td>
+                <td className="whitespace-nowrap px-4 py-4 text-sm text-text-secondary font-code sm:px-6">{verb.simplePast}</td>
+                <td className="whitespace-nowrap px-4 py-4 text-sm text-text-secondary font-code sm:px-6">{verb.pastParticiple}</td>
+                <td className="whitespace-nowrap px-4 py-4 text-sm text-text-secondary italic sm:px-6">{verb.spanish}</td>
               </tr>
             ))}
           </tbody>
@@ -114,7 +114,7 @@ export function ContentRenderer({ block }: { block: ContentBlock }) {
 
     case "table":
       return (
-        <div className="overflow-hidden rounded-lg border border-border">
+        <div className="w-full overflow-x-auto rounded-lg border border-border">
           <table className="min-w-full">
             <thead className="bg-bg-elevated">
               <tr>
@@ -122,7 +122,7 @@ export function ContentRenderer({ block }: { block: ContentBlock }) {
                   <th
                     key={index}
                     scope="col"
-                    className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-accent"
+                    className="whitespace-nowrap px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-accent sm:px-6"
                   >
                     {header}
                   </th>
@@ -136,8 +136,8 @@ export function ContentRenderer({ block }: { block: ContentBlock }) {
                     <td
                       key={cellIndex}
                       className={cn(
-                        "border-t border-border px-6 py-4 text-sm",
-                         cellIndex === 0 ? "text-text-primary font-medium" : "text-text-secondary",
+                        "border-t border-border px-4 py-4 text-sm sm:px-6",
+                         cellIndex === 0 ? "whitespace-nowrap text-text-primary font-medium" : "text-text-secondary",
                          (cell.includes('`')) && 'font-code text-accent/80'
                       )}
                     >
